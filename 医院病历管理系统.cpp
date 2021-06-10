@@ -14,7 +14,7 @@ public:
 	int Age = 0;		//患者年龄
 	string Phone;		//患者电话号码
 	string Location;	//患者病床
-	string Sympyom;		//患者症状
+	string Symptom;		//患者症状
 };
 
 //医院病历库
@@ -85,10 +85,10 @@ void Add_Cases(Hospital_Cases* your_case)
 		your_case->Patient_case[your_case->Cases_Count].Location = location;
 
 		//症状
-		string sympyom;
+		string Symptom;
 		cout << "请输入患者症状：" << endl;
-		cin >> sympyom;
-		your_case->Patient_case[your_case->Cases_Count].Sympyom = sympyom;
+		cin >> Symptom;
+		your_case->Patient_case[your_case->Cases_Count].Symptom = Symptom;
 
 		//个数加一
 		your_case->Cases_Count += 1;
@@ -117,7 +117,7 @@ void Show_Cases(Hospital_Cases* your_case)
 			cout << " 患者年龄：" << your_case->Patient_case[i].Age;
 			cout << " 患者电话：" << your_case->Patient_case[i].Phone;
 			cout << " 患者病房：" << your_case->Patient_case[i].Location;
-			cout << " 患者症状：" << your_case->Patient_case[i].Sympyom;
+			cout << " 患者症状：" << your_case->Patient_case[i].Symptom;
 			cout << endl;
 		}
 		Write_Cases(your_case);
@@ -195,7 +195,7 @@ void Find_Cases(Hospital_Cases* your_case)
 			cout << " 患者年龄：" << your_case->Patient_case[index].Age << endl;
 			cout << " 患者电话：" << your_case->Patient_case[index].Phone << endl;
 			cout << " 患者病房：" << your_case->Patient_case[index].Location << endl;
-			cout << " 患者症状：" << your_case->Patient_case[index].Sympyom << endl;
+			cout << " 患者症状：" << your_case->Patient_case[index].Symptom << endl;
 		}
 		else
 		{
@@ -270,10 +270,10 @@ void Change_Cases(Hospital_Cases* your_case)
 			cout << "修改成功!" << endl;
 
 			//症状
-			string sympyom;
+			string Symptom;
 			cout << " 请输入修改后的症状：" << endl;
-			cin >> sympyom;
-			your_case->Patient_case[index].Sympyom = sympyom;
+			cin >> Symptom;
+			your_case->Patient_case[index].Symptom = Symptom;
 
 			//更改本地文档
 			Write_Cases(your_case);
@@ -354,7 +354,7 @@ void Write_Cases(Hospital_Cases* your_case)
 		Write << " 患者年龄：" << your_case->Patient_case[i].Age;
 		Write << " 患者电话：" << your_case->Patient_case[i].Phone;
 		Write << " 患者病房：" << your_case->Patient_case[i].Location;
-		Write << " 患者症状：" << your_case->Patient_case[i].Sympyom;
+		Write << " 患者症状：" << your_case->Patient_case[i].Symptom;
 		Write << endl;
 	}
 	Write.close();
